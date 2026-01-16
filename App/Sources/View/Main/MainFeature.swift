@@ -1,6 +1,6 @@
 //
 //  MainFeature.swift
-//  TakeAWalk
+//  Walkie
 //
 //  Created by sanghyeon on 6/25/25.
 //
@@ -60,23 +60,6 @@ struct MainFeature {
                         }
                     }
                 )
-
-//                return .run { send in
-//                    await locationClient.requestAuthorization()
-//                    
-//                    async let load: () = {
-//                        let result = try await appClient.recommendCourse()
-//                        await send(.loadDatas(result.routes))
-//                    }()
-//                    
-//                    async let track: () = {
-//                        for await coord in locationClient.startUpdating() {
-//                            await send(.updateLocation(coord.latitude, coord.longitude))
-//                        }
-//                    }()
-//                    
-//                    _ = try await (load, track)
-//                }
             case .loadData:
                 state.isLoading = true
                 state.errorMessage = nil

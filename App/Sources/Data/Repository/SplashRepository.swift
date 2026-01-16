@@ -1,6 +1,6 @@
 //
 //  SplashRepository.swift
-//  TakeAWalk
+//  Walkie
 //
 //  Created by sanghyeon on 9/17/25.
 //

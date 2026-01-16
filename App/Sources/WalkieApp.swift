@@ -1,24 +1,14 @@
+//
+//  WalkieApp.swift
+//  Walkie
+//
 
 import ComposableArchitecture
 import SwiftUI
 import SwiftData
 
-//@main
-//struct TakeAWalkApp: App {
-//    var body: some Scene {
-//        WindowGroup {
-//            RootView(
-//                store: Store(
-//                    initialState: RootFeature.State(),
-//                    reducer: { RootFeature() }
-//                )
-//            )
-//        }
-//    }
-//}
-
 @main
-struct TakeAWalkApp: App {
+struct WalkieApp: App {
 
 	@Environment(\.scenePhase) var scenePhase
     @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
@@ -27,7 +17,6 @@ struct TakeAWalkApp: App {
         initialState: RootFeature.State(),
         reducer: {
             RootFeature()
-//                .dependency(\.courseRepository, .liveValue)
         }
     )
     

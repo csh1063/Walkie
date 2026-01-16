@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8621A12BF03A451185282904"
-               BuildableName = "TakeAWalk.app"
-               BlueprintName = "TakeAWalk"
-               ReferencedContainer = "container:TakeAWalk.xcodeproj">
+               BlueprintIdentifier = "D16DDDD7703182373C2E5DDE"
+               BuildableName = "Walkie.app"
+               BlueprintName = "Walkie"
+               ReferencedContainer = "container:Walkie.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8621A12BF03A451185282904"
-            BuildableName = "TakeAWalk.app"
-            BlueprintName = "TakeAWalk"
-            ReferencedContainer = "container:TakeAWalk.xcodeproj">
+            BlueprintIdentifier = "D16DDDD7703182373C2E5DDE"
+            BuildableName = "Walkie.app"
+            BlueprintName = "Walkie"
+            ReferencedContainer = "container:Walkie.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,10 +62,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8621A12BF03A451185282904"
-            BuildableName = "TakeAWalk.app"
-            BlueprintName = "TakeAWalk"
-            ReferencedContainer = "container:TakeAWalk.xcodeproj">
+            BlueprintIdentifier = "D16DDDD7703182373C2E5DDE"
+            BuildableName = "Walkie.app"
+            BlueprintName = "Walkie"
+            ReferencedContainer = "container:Walkie.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

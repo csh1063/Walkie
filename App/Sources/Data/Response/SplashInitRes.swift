@@ -1,6 +1,6 @@
 //
 //  SplashInitRes.swift
-//  TakeAWalk
+//  Walkie
 //
 //  Created by sanghyeon on 7/6/25.
 //

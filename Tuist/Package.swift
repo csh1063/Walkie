@@ -27,7 +27,7 @@ import PackageDescription
 #endif
 
 let package = Package(
-    name: "TakeAWalk",
+    name: "Walkie",
     dependencies: [
         // Add your own dependencies here:
         // .package(url: "https://github.com/Alamofire/Alamofire", from: "5.0.0"),

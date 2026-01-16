@@ -1,6 +1,6 @@
 //
 //  CourseRecomRes.swift
-//  TakeAWalk
+//  Walkie
 //
 //  Created by sanghyeon on 8/1/25.
 //

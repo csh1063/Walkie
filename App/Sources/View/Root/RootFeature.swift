@@ -1,6 +1,6 @@
 //
 //  RootFeature.swift
-//  TakeAWalk
+//  Walkie
 //
 //  Created by sanghyeon on 6/22/25.
 //
@@ -8,29 +8,6 @@
 import ComposableArchitecture
 import Foundation
 import SwiftUI
-
-//@Reducer
-//struct RootFeature {
-//    
-//    struct State:Equatable {
-//        var isEndSplash: Bool = false
-//    }
-//    
-//    enum Action {
-//        case splash
-//    }
-//    
-//    var body: some ReducerOf<Self> {
-//        Reduce { state, action in
-//            switch action {
-//            case .splash:
-//                print("insert main")
-//                state.isEndSplash = true
-//                return .none
-//            }
-//        }
-//    }
-//}
 
 @Reducer
 struct RootFeature {

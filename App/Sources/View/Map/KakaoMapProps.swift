@@ -1,6 +1,6 @@
 //
 //  KakaoMapProps.swift
-//  TakeAWalk
+//  Walkie
 //
 //  Created by sanghyeon on 7/30/25.
 //

@@ -1,6 +1,6 @@
 //
 //  SplashView.swift
-//  TakeAWalk
+//  Walkie
 //
 //  Created by sanghyeon on 6/22/25.
 //
@@ -38,7 +38,3 @@ struct SplashView: View {
         }
     }
 }
-
-//#Preview {
-//    SplashView()
-//}

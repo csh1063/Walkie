@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:TakeAWalk.xcodeproj">
+      location = "group:Walkie.xcodeproj">
    </FileRef>
    <Group
       location = "container:"

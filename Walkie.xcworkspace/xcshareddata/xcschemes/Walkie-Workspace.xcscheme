@@ -686,20 +686,6 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8621A12BF03A451185282904"
-               BuildableName = "TakeAWalk.app"
-               BlueprintName = "TakeAWalk"
-               ReferencedContainer = "container:TakeAWalk.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "8A53F29ADBAE4C27AB5DA4CE"
                BuildableName = "UIKitNavigation.framework"
                BlueprintName = "UIKitNavigation"
@@ -718,6 +704,20 @@
                BuildableName = "UIKitNavigationShim.framework"
                BlueprintName = "UIKitNavigationShim"
                ReferencedContainer = "container:Tuist/.build/tuist-derived/swift-navigation/swift-navigation.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D16DDDD7703182373C2E5DDE"
+               BuildableName = "Walkie.app"
+               BlueprintName = "Walkie"
+               ReferencedContainer = "container:Walkie.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry

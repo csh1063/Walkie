@@ -1,6 +1,6 @@
 //
 //  KakaoMapManager.swift
-//  TakeAWalk
+//  Walkie
 //
 //  Created by sanghyeon on 9/15/25.
 //

@@ -1,6 +1,6 @@
 //
 //  SplashAPI.swift
-//  TakeAWalk
+//  Walkie
 //
 //  Created by sanghyeon on 7/5/25.
 //

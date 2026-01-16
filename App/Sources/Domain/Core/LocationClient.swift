@@ -1,6 +1,6 @@
 //
 //  LocationClient.swift
-//  TakeAWalk
+//  Walkie
 //
 //  Domain 레이어에서 사용하는 위치 추상화
 //

@@ -1,7 +1,7 @@
 import ProjectDescription
 
 let project = Project(
-    name: "TakeAWalk",
+    name: "Walkie",
     organizationName: "",
     settings: .settings(
         configurations: [
@@ -10,10 +10,10 @@ let project = Project(
         ]),
     targets: [
         .target(
-            name: "TakeAWalk",
+            name: "Walkie",
             destinations: [.iPhone],
             product: .app,
-            bundleId: "com.choi.TakeAWalk",
+            bundleId: "com.choi.Walkie",
             deploymentTargets: .iOS("15.0"),
             infoPlist: .extendingDefault(with: [
                 "CFBundleShortVersionString": "1.0.0",

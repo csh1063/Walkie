@@ -1,6 +1,6 @@
 //
 //  CourseError.swift
-//  TakeAWalk
+//  Walkie
 //
 //  코스 관련 도메인 에러 타입
 //

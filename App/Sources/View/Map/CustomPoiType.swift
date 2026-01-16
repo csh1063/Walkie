@@ -1,6 +1,6 @@
 //
 //  CustomPoiType.swift
-//  TakeAWalk
+//  Walkie
 //
 //  Created by sanghyeon on 7/7/25.
 //

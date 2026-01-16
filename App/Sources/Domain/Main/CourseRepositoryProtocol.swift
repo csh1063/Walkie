@@ -1,6 +1,6 @@
 //
 //  CourseRepositoryProtocol.swift
-//  TakeAWalk
+//  Walkie
 //
 //  Domain 레이어에서 정의하는 Repository 추상화
 //

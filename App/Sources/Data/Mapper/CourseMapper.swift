@@ -1,6 +1,6 @@
 //
 //  CourseMapper.swift
-//  TakeAWalk
+//  Walkie
 //
 //  Created by GPT on 1/9/26.
 //
