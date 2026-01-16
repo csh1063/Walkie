@@ -6,39 +6,57 @@
 //
 
 import Foundation
-import ComposableArchitecture
+import Moya
 
-struct CourseRepository {
-    var recommendCourse: () async throws -> RouteData
-    var addRoute: (RouteAddParam) async throws -> Bool
-}
-
-// {{Feature}}.dependency(\.courseRepository, .live)
-// \.appClient 부분
-extension DependencyValues {
-    var courseRepository: CourseRepository {
-        get { self[CourseRepository.self] }
-        set { self[CourseRepository.self] = newValue }
+/// CourseRepositoryProtocol의 실제 구현체 (Data 레이어)
+final class LiveCourseRepository: CourseRepositoryProtocol {
+    private let client: NetworkManager<CourseAPI>
+    
+    init(client: NetworkManager<CourseAPI> = NetworkManager<CourseAPI>()) {
+        self.client = client
     }
-}
-
-// .live 부분
-extension CourseRepository: DependencyKey {
-    static let liveValue: CourseRepository = {
-        
-        let client = NetworkManager<CourseAPI>()
-        
-        return Self(
-            recommendCourse: {
-                let result: CourseRecomRes = try await client.request(.recommend)
-                
-                return result.toDomain()
-            },
-            addRoute: { param in
-                let result: BaseSuccess = try await client.request(.add(param))
-                
-                return true
-            }
-        )
-    }()
+    
+    func recommendCourse() async throws -> RouteData {
+        do {
+            let result: CourseRecomRes = try await client.request(.recommend)
+            return result.toDomain()
+        } catch let error as TWError {
+            // Data 레이어 에러를 Domain 에러로 변환
+            throw mapToDomainError(error)
+        } catch {
+            throw CourseError.unknown(error.localizedDescription)
+        }
+    }
+    
+    func addRoute(_ param: CourseAddParam) async throws -> Bool {
+        do {
+            // Domain 타입을 Data 타입으로 변환
+            let routeAddParam = RouteAddParam(
+                name: param.name,
+                geometry: param.geometry,
+                distance: param.distance
+            )
+            let _: BaseSuccess = try await client.request(.add(routeAddParam))
+            return true
+        } catch let error as TWError {
+            // Data 레이어 에러를 Domain 에러로 변환
+            throw mapToDomainError(error)
+        } catch {
+            throw CourseError.unknown(error.localizedDescription)
+        }
+    }
+    
+    // MARK: - Private Helper
+    
+    /// Data 레이어 에러를 Domain 에러로 변환
+    private func mapToDomainError(_ error: TWError) -> CourseError {
+        switch error {
+        case .networkError(let message, let code):
+            return .networkError("\(message) (코드: \(code))")
+        case .decodingError(let message, let code):
+            return .mappingError("\(message) (코드: \(code))")
+        case .unknown(let underlyingError):
+            return .unknown(underlyingError.localizedDescription)
+        }
+    }
 }

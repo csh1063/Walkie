@@ -18,6 +18,7 @@ let project = Project(
             infoPlist: .extendingDefault(with: [
                 "CFBundleShortVersionString": "1.0.0",
                 "CFBundleVersion": "1",
+                "KAKAO_APP_KEY": "026c111f6ea67ef97db2bdb5ce7be07f",
                 "UILaunchScreen": [
                     "UIColorName": "",
                     "UIImageName": "",

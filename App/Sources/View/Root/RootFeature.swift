@@ -62,8 +62,8 @@ struct RootFeature {
         }
         Scope(state: \.main, action: \.main) {
             MainFeature()
-                .dependency(\.courseRepository, .liveValue)
                 .dependency(\.locationClient, .liveValue)
+                .dependency(\.courseUseCase, .liveValue)
         }
         Reduce { state, action in
             switch action {

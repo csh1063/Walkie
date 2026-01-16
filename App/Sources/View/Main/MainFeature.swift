@@ -17,6 +17,7 @@ struct MainFeature {
         
         var isLoading = false
         var errorMessage: String?
+        var courseError: CourseError?
         
         var mapRevision: Int = -1
         var mapState: Bool = true
@@ -27,19 +28,9 @@ struct MainFeature {
         
         var moveMode: KakaoMapTrackingMode = .moveCurrent
         var drawMode: KakaoMapDrawMode = .none
-        
-        
-//        func props(event: @escaping (KakaoMapEvent) -> Void) -> KakaoMapProps {
-//            return KakaoMapProps(datas: self.datas,
-//                                 mode: self.mode,
-//                                 mapState: self.mapState,
-//                                 userLatitude: self.userLatitude,
-//                                 userLongitude: self.userLongitude,
-//                                 onEvent: event)
-//        }
     }
 
-    enum Action {//}: Equatable {
+    enum Action {
         case onAppear
         case loadData
         case drawData(RouteData)
@@ -48,9 +39,11 @@ struct MainFeature {
         case changeMapState(Bool)
         case setMoveMode(KakaoMapTrackingMode)
         case setDrawMode(KakaoMapDrawMode)
+        case handleError(CourseError)
+        case clearError
     }
     
-    @Dependency(\.courseRepository) var courseRepository
+    @Dependency(\.courseUseCase) var courseUseCase
     @Dependency(\.locationClient) var locationClient
 
     var body: some ReducerOf<Self> {
@@ -85,28 +78,49 @@ struct MainFeature {
 //                    _ = try await (load, track)
 //                }
             case .loadData:
+                state.isLoading = true
+                state.errorMessage = nil
+                state.courseError = nil
                 return .run { send in
                     do {
-                        let result = try await courseRepository.recommendCourse()
+                        let result = try await courseUseCase.recommendCourse()
                         await send(.drawData(result))
+                    } catch let error as CourseError {
+                        await send(.handleError(error))
                     } catch {
-                        
+                        await send(.handleError(.unknown(error.localizedDescription)))
                     }
                 }
             case let .drawData(result):
-                print("good", result)
+                state.isLoading = false
                 state.mapRevision += 1
                 state.datas = result.routes
                 state.totalCount = result.totalCount
                 return .none
             case .updateData(let data):
-//                state.datas.append(data)
+                state.isLoading = true
+                state.errorMessage = nil
+                state.courseError = nil
                 return .run { send in
-                    
-                    let result = try await courseRepository.addRoute(data.param)
-                    
-                    await send(.loadData)
+                    do {
+                        _ = try await courseUseCase.addRoute(data)
+                        await send(.loadData)
+                    } catch let error as CourseError {
+                        await send(.handleError(error))
+                    } catch {
+                        await send(.handleError(.unknown(error.localizedDescription)))
+                    }
                 }
+            case let .handleError(error):
+                state.isLoading = false
+                state.courseError = error
+                state.errorMessage = error.errorDescription
+                print("에러 발생: \(error.errorDescription ?? "알 수 없는 오류")")
+                return .none
+            case .clearError:
+                state.errorMessage = nil
+                state.courseError = nil
+                return .none
             case let .updateLocation(latitude, longitude):
                 state.userLatitude = latitude
                 state.userLongitude = longitude
