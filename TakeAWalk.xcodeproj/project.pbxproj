@@ -3,39 +3,44 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		088C8AF9DA936C974623CCAD /* KakaoMapProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D99791D67E413FD5E1ECE /* KakaoMapProps.swift */; };
 		0D473D8EE9CF777ABE46F755 /* TabInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C89840313BDF5733225D75 /* TabInfo.swift */; };
 		15B3500A17F6039C6E912550 /* KakaoMapsSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9297C9DEDA0EAC2C3BBBCB17 /* KakaoMapsSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1711E22B60F7B3596215ACEA /* CourseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A18D2727D578CFD0DC93014 /* CourseUseCase.swift */; };
 		190A782CF1398C0C55ECC319 /* KakaoMapsSDK-SPM_KakaoMapsSDK_SPM.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B8540F7F768D3535B504DA47 /* KakaoMapsSDK-SPM_KakaoMapsSDK_SPM.bundle */; };
-		191E3A6F2E78364E002EB5AA /* KakaoMapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191E3A6E2E78364E002EB5AA /* KakaoMapManager.swift */; };
 		194E5191B3FD581C3948C1B8 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B7BB80B373BC0B59CF4A6028 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1BE9C611B112FCF45D7FDA35 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6230257877812A49B4E63E /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1E8C878C9409B2403240E43E /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593E2F39643EBAA1685AF931 /* BaseResponse.swift */; };
 		242002B3871EA4F684EC6E98 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7BB80B373BC0B59CF4A6028 /* Alamofire.framework */; };
 		260A6834297A6AA798C34BB0 /* ComposableArchitecture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41B01E36C7E854A89832FD94 /* ComposableArchitecture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2A062CD9BE9DEA893DE82925 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6230257877812A49B4E63E /* SwiftyJSON.framework */; };
+		3F946A24DA4E209B41DC9DC5 /* CourseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC7670A34B014C13361BB9B /* CourseRepository.swift */; };
 		405F5D181F8CAC8D79E13A42 /* TuistBundle+TakeAWalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471BEE428865CE507F61D478 /* TuistBundle+TakeAWalk.swift */; };
 		41611B4D2C330F682D0E680C /* AppClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1AFCCB7686633DA8D0D19 /* AppClient.swift */; };
 		43B85E7FFC3B085A60884F3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277231B54DBCC101874D6D69 /* AppDelegate.swift */; };
 		4762BF0A4229C99D53B16504 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EEFAE8FEF75B6E33A95AD8 /* TabItem.swift */; };
+		4865E5ED7D6C7D2DE22448E4 /* KakaoMapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152E693ECF1EAD409F6AEBED /* KakaoMapManager.swift */; };
 		4AA841816CD86A088F7D6F1B /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B7283782E1EB029E042FB8 /* Kingfisher.framework */; };
 		4CE7FE472ADF44A0602195B4 /* TWError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51269A63CBBDE8A262227519 /* TWError.swift */; };
 		5B48B98343A8B50FE88A459C /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E7630D26DF36DFC1FF7FBE /* CustomTabbar.swift */; };
 		647A2EB8328F1E2EC2F3C3F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E899A0FB98852F143358154 /* SceneDelegate.swift */; };
+		650174989B14E6D61FB79993 /* LocationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A859BB4AE0C1DBF84A9FEC /* LocationClient.swift */; };
 		6B65622DC7F7BC59B7749564 /* SplashInitRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF71634EF3F468F012DE4CA1 /* SplashInitRes.swift */; };
 		708AAB2C6A1725C194577449 /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A355D3F6D3D3C3FD9939CED4 /* MoyaLoggingPlugin.swift */; };
 		748F39108DA19873730E90A0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2496F02834BBD9BBB6F64394 /* NetworkManager.swift */; };
 		7A11F123A155FFDA56C73CCC /* MainFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82385C6B5D0F269319AA64FA /* MainFeature.swift */; };
 		7E51D18F5DFF6A39D875A093 /* CourseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA077AE7E5F7624CF9019C4 /* CourseAPI.swift */; };
+		7F7DC11FF5DF9A7BCC2E17FB /* CourseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D816095067BB29B08FEC46 /* CourseMapper.swift */; };
 		8203800A2618D7080C29BD02 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CF513B113F8AAFF7736046 /* BaseAPI.swift */; };
 		83E594DC74DC11F48667D7E5 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679E84703B889BF63B6C2E6A /* Server.swift */; };
 		85AD82B25780018860D527A0 /* CustomTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C703D0FDA05DD869D21FE431 /* CustomTabItem.swift */; };
 		88C7CCC6BCC7D466FD278B4F /* libKakaoMapsSDK_SPM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95AE8DB4357CBABA540E5874 /* libKakaoMapsSDK_SPM.a */; };
 		8A04EFBA03D33833D7D8D8FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10FE74B0A1CA2643821C5FA /* Assets.xcassets */; };
+		92718427C60924CF65EFA237 /* LocationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41930850014AC70AD28E1A67 /* LocationClient.swift */; };
 		9281E7FA6275A1DA1C665396 /* TuistAssets+TakeAWalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D158F5B5ACD4ED5319ECB90 /* TuistAssets+TakeAWalk.swift */; };
 		98D2566048EC3AFC52D2720C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E40628521385B60CBE124C /* RootView.swift */; };
 		9A1C40A8360BC06EBD95498B /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 213839E13C847CEE682CD2B7 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -48,6 +53,7 @@
 		B056BD1A068690EA28FBE4EE /* TakeAWalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DF50B923D3CA4E3A3EBB19 /* TakeAWalkApp.swift */; };
 		B1CF7AAEAA05D8810AEF2DF6 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213839E13C847CEE682CD2B7 /* SnapKit.framework */; };
 		B3A296AABD545757D2A98809 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651AA5203E1031E0B958CA58 /* CustomTabView.swift */; };
+		B9BE95BB1A5765A031509687 /* SplashRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71CF7E5A4DD74D0FBE6F07A /* SplashRepository.swift */; };
 		BD40E49CF360E35035BD127F /* swift-sharing_Sharing.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F223B4DB3E163352C931A367 /* swift-sharing_Sharing.bundle */; };
 		BD6F94354F7080612AFD1BEF /* SplashAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3C47FD5BA2F9171848735B /* SplashAPI.swift */; };
 		BF7817303042219576A5552D /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B01E36C7E854A89832FD94 /* ComposableArchitecture.framework */; };
@@ -106,16 +112,18 @@
 		0C6230257877812A49B4E63E /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D158F5B5ACD4ED5319ECB90 /* TuistAssets+TakeAWalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+TakeAWalk.swift"; sourceTree = "<group>"; };
 		14C89840313BDF5733225D75 /* TabInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabInfo.swift; sourceTree = "<group>"; };
+		152E693ECF1EAD409F6AEBED /* KakaoMapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapManager.swift; sourceTree = "<group>"; };
 		15A29D64A94FCA4A5100CF47 /* CourseRecomRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRecomRes.swift; sourceTree = "<group>"; };
-		191E3A6E2E78364E002EB5AA /* KakaoMapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapManager.swift; sourceTree = "<group>"; };
 		213839E13C847CEE682CD2B7 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2496F02834BBD9BBB6F64394 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		261C0F23761C89B491462CDA /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		277231B54DBCC101874D6D69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		285A6D1CB1A3BF956E7FDA53 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3EADA1AE793830B9FD5AAC7E /* SplashFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashFeature.swift; sourceTree = "<group>"; };
+		41930850014AC70AD28E1A67 /* LocationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationClient.swift; sourceTree = "<group>"; };
 		41B01E36C7E854A89832FD94 /* ComposableArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ComposableArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		471BEE428865CE507F61D478 /* TuistBundle+TakeAWalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+TakeAWalk.swift"; sourceTree = "<group>"; };
+		4A18D2727D578CFD0DC93014 /* CourseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseUseCase.swift; sourceTree = "<group>"; };
 		51269A63CBBDE8A262227519 /* TWError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWError.swift; sourceTree = "<group>"; };
 		55017CA8A9D56B50DCFCF6EC /* KakaoMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapView.swift; sourceTree = "<group>"; };
 		58279D3718FDC3C6A035290B /* CombineMoya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CombineMoya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,15 +142,19 @@
 		80CF513B113F8AAFF7736046 /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		82385C6B5D0F269319AA64FA /* MainFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeature.swift; sourceTree = "<group>"; };
 		8E899A0FB98852F143358154 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8EC7670A34B014C13361BB9B /* CourseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRepository.swift; sourceTree = "<group>"; };
 		8FD37A09ABE0DD563623E3E8 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		9297C9DEDA0EAC2C3BBBCB17 /* KakaoMapsSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = KakaoMapsSDK.xcframework; sourceTree = "<group>"; };
 		95AE8DB4357CBABA540E5874 /* libKakaoMapsSDK_SPM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKakaoMapsSDK_SPM.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A355D3F6D3D3C3FD9939CED4 /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
+		A3A859BB4AE0C1DBF84A9FEC /* LocationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationClient.swift; sourceTree = "<group>"; };
 		B7BB80B373BC0B59CF4A6028 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8540F7F768D3535B504DA47 /* KakaoMapsSDK-SPM_KakaoMapsSDK_SPM.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KakaoMapsSDK-SPM_KakaoMapsSDK_SPM.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B7283782E1EB029E042FB8 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1D816095067BB29B08FEC46 /* CourseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseMapper.swift; sourceTree = "<group>"; };
 		C27D99791D67E413FD5E1ECE /* KakaoMapProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapProps.swift; sourceTree = "<group>"; };
 		C703D0FDA05DD869D21FE431 /* CustomTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabItem.swift; sourceTree = "<group>"; };
+		D71CF7E5A4DD74D0FBE6F07A /* SplashRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRepository.swift; sourceTree = "<group>"; };
 		DF71634EF3F468F012DE4CA1 /* SplashInitRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInitRes.swift; sourceTree = "<group>"; };
 		DFA077AE7E5F7624CF9019C4 /* CourseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseAPI.swift; sourceTree = "<group>"; };
 		E6DF50B923D3CA4E3A3EBB19 /* TakeAWalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeAWalkApp.swift; sourceTree = "<group>"; };
@@ -151,10 +163,6 @@
 		F1D3D9AC40C22685984415F6 /* BaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProvider.swift; sourceTree = "<group>"; };
 		F223B4DB3E163352C931A367 /* swift-sharing_Sharing.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-sharing_Sharing.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		191E3A702E7AB81F002EB5AA /* Repository */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Repository; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1A3C40679118959E5ED50EB9 /* Frameworks */ = {
@@ -200,9 +208,9 @@
 			isa = PBXGroup;
 			children = (
 				7019DE4BFCD438AEEF1B5D76 /* CustomPoiType.swift */,
+				152E693ECF1EAD409F6AEBED /* KakaoMapManager.swift */,
 				C27D99791D67E413FD5E1ECE /* KakaoMapProps.swift */,
 				55017CA8A9D56B50DCFCF6EC /* KakaoMapView.swift */,
-				191E3A6E2E78364E002EB5AA /* KakaoMapManager.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -222,6 +230,14 @@
 				9297C9DEDA0EAC2C3BBBCB17 /* KakaoMapsSDK.xcframework */,
 			);
 			path = BinaryFramework;
+			sourceTree = "<group>";
+		};
+		32D00B570343E20CA6E53662 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				C1D816095067BB29B08FEC46 /* CourseMapper.swift */,
+			);
+			path = Mapper;
 			sourceTree = "<group>";
 		};
 		3651D29C9F76CDF9CE392BC1 /* Client */ = {
@@ -249,6 +265,14 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
+		401CAFE80892CF4C8E9F562B /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				A3A859BB4AE0C1DBF84A9FEC /* LocationClient.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		4CF9A38A4A6116D3ACE26EE4 /* Moya */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +291,14 @@
 				C882673747F78D152DE15BA2 /* Splash */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		5548065897F8F9E8E6EAAADC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				41930850014AC70AD28E1A67 /* LocationClient.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		5BF477C737DC36B4F1C07F98 /* Base */ = {
@@ -324,6 +356,7 @@
 		8CAD911558C6C70605AFF08B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				4A18D2727D578CFD0DC93014 /* CourseUseCase.swift */,
 				8FD37A09ABE0DD563623E3E8 /* Route.swift */,
 			);
 			path = Main;
@@ -349,10 +382,12 @@
 		A5EFAA1A7B2234AFE5F30C84 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				191E3A702E7AB81F002EB5AA /* Repository */,
 				3651D29C9F76CDF9CE392BC1 /* Client */,
+				401CAFE80892CF4C8E9F562B /* Location */,
+				32D00B570343E20CA6E53662 /* Mapper */,
 				4CF9A38A4A6116D3ACE26EE4 /* Moya */,
 				4E4D6E3C07C881C85AD3A010 /* Network */,
+				ED0295AC505284759B3AE69F /* Repository */,
 				9474C59F3FE3A0CE09FAC6FF /* Response */,
 			);
 			path = Data;
@@ -361,6 +396,7 @@
 		AB276EA3DF772ACB50541EAE /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				5548065897F8F9E8E6EAAADC /* Core */,
 				8CAD911558C6C70605AFF08B /* Main */,
 			);
 			path = Domain;
@@ -473,6 +509,15 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		ED0295AC505284759B3AE69F /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				8EC7670A34B014C13361BB9B /* CourseRepository.swift */,
+				D71CF7E5A4DD74D0FBE6F07A /* SplashRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -489,9 +534,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				191E3A702E7AB81F002EB5AA /* Repository */,
 			);
 			name = TakeAWalk;
 			packageProductDependencies = (
@@ -547,6 +589,8 @@
 			files = (
 				43B85E7FFC3B085A60884F3B /* AppDelegate.swift in Sources */,
 				41611B4D2C330F682D0E680C /* AppClient.swift in Sources */,
+				650174989B14E6D61FB79993 /* LocationClient.swift in Sources */,
+				7F7DC11FF5DF9A7BCC2E17FB /* CourseMapper.swift in Sources */,
 				A73C9250C32A6FB81A833A30 /* BaseProvider.swift in Sources */,
 				708AAB2C6A1725C194577449 /* MoyaLoggingPlugin.swift in Sources */,
 				748F39108DA19873730E90A0 /* NetworkManager.swift in Sources */,
@@ -556,8 +600,12 @@
 				4CE7FE472ADF44A0602195B4 /* TWError.swift in Sources */,
 				7E51D18F5DFF6A39D875A093 /* CourseAPI.swift in Sources */,
 				BD6F94354F7080612AFD1BEF /* SplashAPI.swift in Sources */,
+				3F946A24DA4E209B41DC9DC5 /* CourseRepository.swift in Sources */,
+				B9BE95BB1A5765A031509687 /* SplashRepository.swift in Sources */,
 				A911B897C728E729CF49D02C /* CourseRecomRes.swift in Sources */,
 				6B65622DC7F7BC59B7749564 /* SplashInitRes.swift in Sources */,
+				92718427C60924CF65EFA237 /* LocationClient.swift in Sources */,
+				1711E22B60F7B3596215ACEA /* CourseUseCase.swift in Sources */,
 				C74F3DFB1C9FD51D5C851446 /* Route.swift in Sources */,
 				647A2EB8328F1E2EC2F3C3F1 /* SceneDelegate.swift in Sources */,
 				B056BD1A068690EA28FBE4EE /* TakeAWalkApp.swift in Sources */,
@@ -570,10 +618,10 @@
 				AF0A2F1846DC88DCD8B68BDA /* MainView.swift in Sources */,
 				D5A0DEB07EA11B5179197FD9 /* LocationManager.swift in Sources */,
 				A7DF8E424C198CA095DBC422 /* CustomPoiType.swift in Sources */,
+				4865E5ED7D6C7D2DE22448E4 /* KakaoMapManager.swift in Sources */,
 				088C8AF9DA936C974623CCAD /* KakaoMapProps.swift in Sources */,
 				AB76D7ADECC1EB1137D29798 /* KakaoMapView.swift in Sources */,
 				F4071D45719C12169DD355E1 /* RootFeature.swift in Sources */,
-				191E3A6F2E78364E002EB5AA /* KakaoMapManager.swift in Sources */,
 				98D2566048EC3AFC52D2720C /* RootView.swift in Sources */,
 				C2EFBD2E59B61113D328593C /* SplashFeature.swift in Sources */,
 				E70E99152AFDA69CE2EA06B0 /* SplashView.swift in Sources */,
@@ -611,7 +659,21 @@
 					"-fmodule-map-file=$(SRCROOT)/Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
 					"-fmodule-map-file=$(SRCROOT)/Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros";
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.choi.TakeAWalk;
 				PRODUCT_NAME = TakeAWalk;
 				SDKROOT = iphoneos;
@@ -704,14 +766,31 @@
 					"-fmodule-map-file=$(SRCROOT)/Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
 					"-fmodule-map-file=$(SRCROOT)/Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros";
+				OTHER_SWIFT_FLAGS = (
+					"$(inherited)",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
+					"-Xcc",
+					"-fmodule-map-file=$(SRCROOT)/Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin",
+					"-load-plugin-executable",
+					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.choi.TakeAWalk;
 				PRODUCT_NAME = TakeAWalk;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
