@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,7 +26,7 @@
 		567B6A9BFC42B7A3D4194D98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C4AA30CBA94A7DD2CF9D051 /* Assets.xcassets */; };
 		583F20EEE25E8D5659C6C881 /* swift-sharing_Sharing.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 174B37AA0088443956E8A4A2 /* swift-sharing_Sharing.bundle */; };
 		58A75B63D590BCD369221F07 /* CustomTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5597A6E96CC47FCF6BD326 /* CustomTabItem.swift */; };
-		5AA3C729C219B9DB2EA7D41D /* LocationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFB8EC7A27ADE566A54828 /* LocationClient.swift */; };
+		5AA3C729C219B9DB2EA7D41D /* DefaultLocationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFB8EC7A27ADE566A54828 /* DefaultLocationClient.swift */; };
 		67F8B4F08062683F29782399 /* SplashInitRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF1E24829B60180A6000F3 /* SplashInitRes.swift */; };
 		6AA4BBFD18A58C3F3514C11B /* CourseRecomRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4596BC7D9A08C2090DF281 /* CourseRecomRes.swift */; };
 		78AD7AF17412303ECD780926 /* CourseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37B712525CA245BA83EF26B /* CourseAPI.swift */; };
@@ -53,11 +53,9 @@
 		B8BDB5F3672C24CC6032D66E /* TabInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FCDEDD420EA6DDA2985C19 /* TabInfo.swift */; };
 		BBE90A464B286E2FBD905412 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA8D79D47705ECBD673CCE35 /* Moya.framework */; };
 		BDAAB67ACBD7079242408AEC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A835FFE209A983860FD36 /* NetworkManager.swift */; };
-		C0A9BDAD010C12A8E5CD7AEA /* TakeAWalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6D2B790281A56215EC3C1B /* TakeAWalkApp.swift */; };
 		C263C769AFDF946C5F274697 /* KakaoMapsSDK-SPM_KakaoMapsSDK_SPM.bundle in Dependencies */ = {isa = PBXBuildFile; fileRef = 0231909945B3CCDA22F33CB9 /* KakaoMapsSDK-SPM_KakaoMapsSDK_SPM.bundle */; };
 		C29C57133C8FA13CBFD3F437 /* KakaoMapsSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1380808ECCA7E9E083EFA838 /* KakaoMapsSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D2699841700F7F9A3010E834 /* CombineMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA11632CE966F8007F60469C /* CombineMoya.framework */; };
-		D47BEF848DD4872FA0C2951E /* AppClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0924E2C65D0832D990DE5A0A /* AppClient.swift */; };
 		D662907D0DCB0EA4AF900D34 /* CourseRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8114FF35AE225E0C4533446F /* CourseRepositoryProtocol.swift */; };
 		D73B16FB09944EFEFC947899 /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA61294F9F33D58F00147E1A /* ComposableArchitecture.framework */; };
 		D7A37DBEFF08F3767D84BDEF /* MainFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A0877FD2E1321D7C3989DF /* MainFeature.swift */; };
@@ -111,8 +109,6 @@
 /* Begin PBXFileReference section */
 		0231909945B3CCDA22F33CB9 /* KakaoMapsSDK-SPM_KakaoMapsSDK_SPM.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KakaoMapsSDK-SPM_KakaoMapsSDK_SPM.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0647813280E174B3769B444C /* TWError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWError.swift; sourceTree = "<group>"; };
-		0924E2C65D0832D990DE5A0A /* AppClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppClient.swift; sourceTree = "<group>"; };
-		0D6D2B790281A56215EC3C1B /* TakeAWalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeAWalkApp.swift; sourceTree = "<group>"; };
 		1076CCEEF78C7175F967EB3A /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		125FAAE56DF0D80D0AD42285 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 		1380808ECCA7E9E083EFA838 /* KakaoMapsSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = KakaoMapsSDK.xcframework; sourceTree = "<group>"; };
@@ -164,7 +160,7 @@
 		E4E63ADDA464C13A2A9A69CD /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		EA8D79D47705ECBD673CCE35 /* Moya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F691EEE4488504E5633FE04D /* TuistAssets+Walkie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+Walkie.swift"; sourceTree = "<group>"; };
-		F6CFB8EC7A27ADE566A54828 /* LocationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationClient.swift; sourceTree = "<group>"; };
+		F6CFB8EC7A27ADE566A54828 /* DefaultLocationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLocationClient.swift; sourceTree = "<group>"; };
 		F763A242D2925C83260DF313 /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,7 +188,7 @@
 		1027A5BEEDC7EB468F51D92E /* Location */ = {
 			isa = PBXGroup;
 			children = (
-				F6CFB8EC7A27ADE566A54828 /* LocationClient.swift */,
+				F6CFB8EC7A27ADE566A54828 /* DefaultLocationClient.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -239,14 +235,6 @@
 				28D1807A8A7210C78EBFF799 /* Splash */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		3358A6E028DDCF80074D84C1 /* Client */ = {
-			isa = PBXGroup;
-			children = (
-				0924E2C65D0832D990DE5A0A /* AppClient.swift */,
-			);
-			path = Client;
 			sourceTree = "<group>";
 		};
 		4704426E8051B196EBF31238 /* Project */ = {
@@ -330,7 +318,6 @@
 				C81F316961761336FFFEFB6B /* View */,
 				B259E0BF2831F46948690AC4 /* AppDelegate.swift */,
 				CD4440D0B6701D447B4252D5 /* SceneDelegate.swift */,
-				0D6D2B790281A56215EC3C1B /* TakeAWalkApp.swift */,
 				39F318723FE4C549A329745D /* WalkieApp.swift */,
 			);
 			path = Sources;
@@ -392,7 +379,6 @@
 		BA8B0377A9137C59BCE9FCDB /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				3358A6E028DDCF80074D84C1 /* Client */,
 				1027A5BEEDC7EB468F51D92E /* Location */,
 				690B40C1D9DE85C6EFE8E0CB /* Mapper */,
 				4F68AB319F6EE175E5202274 /* Moya */,
@@ -586,8 +572,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33682141908DE5CA479FA9CD /* AppDelegate.swift in Sources */,
-				D47BEF848DD4872FA0C2951E /* AppClient.swift in Sources */,
-				5AA3C729C219B9DB2EA7D41D /* LocationClient.swift in Sources */,
+				5AA3C729C219B9DB2EA7D41D /* DefaultLocationClient.swift in Sources */,
 				9AA2CF0DE4D8BEE940842C54 /* CourseMapper.swift in Sources */,
 				82FD54263C23FBB6A5853CD9 /* BaseProvider.swift in Sources */,
 				24A23BA2182C8D83AE80383A /* MoyaLoggingPlugin.swift in Sources */,
@@ -608,7 +593,6 @@
 				2837B051C642A6D02A991EFB /* CourseUseCase.swift in Sources */,
 				E7834DD22C5779E6575650DE /* Route.swift in Sources */,
 				91462CFE3154C8219A1261A2 /* SceneDelegate.swift in Sources */,
-				C0A9BDAD010C12A8E5CD7AEA /* TakeAWalkApp.swift in Sources */,
 				58A75B63D590BCD369221F07 /* CustomTabItem.swift in Sources */,
 				142F66310583CF937DB04942 /* CustomTabView.swift in Sources */,
 				7FDE43415A9A04568A06DA8F /* CustomTabbar.swift in Sources */,
@@ -659,21 +643,7 @@
 					"-fmodule-map-file=$(SRCROOT)/Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
 					"-fmodule-map-file=$(SRCROOT)/Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros";
 				PRODUCT_BUNDLE_IDENTIFIER = com.choi.Walkie;
 				PRODUCT_NAME = Walkie;
 				SDKROOT = iphoneos;
@@ -713,31 +683,14 @@
 					"-fmodule-map-file=$(SRCROOT)/Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
 					"-fmodule-map-file=$(SRCROOT)/Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
 				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin",
-					"-load-plugin-executable",
-					"$BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros",
-				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Tuist/.build/checkouts/swift-syntax/Sources/_SwiftSyntaxCShims/include/module.modulemap -Xcc -fmodule-map-file=$(SRCROOT)/Tuist/.build/tuist-derived/UIKitNavigationShim/UIKitNavigationShim.modulemap -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/CasePathsMacros#CasePathsMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/ComposableArchitectureMacros#ComposableArchitectureMacros -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/DependenciesMacrosPlugin#DependenciesMacrosPlugin -load-plugin-executable $BUILD_DIR/Debug$EFFECTIVE_PLATFORM_NAME/PerceptionMacros#PerceptionMacros";
 				PRODUCT_BUNDLE_IDENTIFIER = com.choi.Walkie;
 				PRODUCT_NAME = Walkie;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					DEBUG,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;

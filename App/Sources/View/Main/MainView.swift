@@ -60,21 +60,24 @@ struct MainView: View {
                     }
                 }
                 
-                HStack {
+                HStack(spacing: 12) {
+                    // 내 위치 버튼
                     Button {
                         viewStore.send(.setMoveMode(.moveCurrent))
                     } label: {
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(Color.white)
-                            .frame(width: 50, height: 50)
-                            .overlay {
-                                Image(systemName: "dot.scope")
-//                                Text("내 위치")
-                            }
+                        ZStack {
+                            Circle()
+                                .fill(Color.white)
+                                .frame(width: 50, height: 50)
+                                .shadow(color: Color.black.opacity(0.15), radius: 8, x: 0, y: 2)
+                            
+                            Image(systemName: "location.fill")
+                                .font(.system(size: 20, weight: .semibold))
+                                .foregroundColor(.blue)
+                        }
                     }
                     
-//                    .frame(minWidth: 0, maxWidth: .infinity)
-                    
+                    // 그리기 버튼
                     Button {
                         switch viewStore.drawMode {
                         case .none:
@@ -84,20 +87,26 @@ struct MainView: View {
                         case .tracking: break
                         }
                     } label: {
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(Color.white)
-//                            .frame(width: 120, height: 40)
-                            .overlay {
-                                switch viewStore.drawMode {
-                                case .none: Text("그리기")
-                                case .pin: Text("종료")
-                                case .tracking: Text("-")
-                                        .foregroundStyle(Color.gray)
-                                }
-                            }
+                        HStack(spacing: 6) {
+                            Image(systemName: viewStore.drawMode == .pin ? "xmark.circle.fill" : "pencil")
+                                .font(.system(size: 14, weight: .semibold))
+                            
+                            Text(viewStore.drawMode == .pin ? "종료" : "그리기")
+                                .font(.system(size: 15, weight: .semibold))
+                        }
+                        .foregroundColor(viewStore.drawMode == .pin ? .white : .blue)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 50)
+                        .background(
+                            RoundedRectangle(cornerRadius: 25)
+                                .fill(viewStore.drawMode == .pin ? Color.blue : Color.white)
+                        )
+                        .shadow(color: Color.black.opacity(0.1), radius: 6, x: 0, y: 2)
                     }
-                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .disabled(viewStore.drawMode == .tracking)
+                    .opacity(viewStore.drawMode == .tracking ? 0.5 : 1.0)
                     
+                    // 트래킹 버튼
                     Button {
                         switch viewStore.drawMode {
                         case .none:
@@ -107,22 +116,40 @@ struct MainView: View {
                             viewStore.send(.setDrawMode(.none))
                         }
                     } label: {
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(Color.white)
-//                            .frame(width: 120, height: 40)
-                            .overlay {
-                                switch viewStore.drawMode {
-                                case .none: Text("트래킹")
-                                case .pin: Text("-")
-                                        .foregroundStyle(Color.gray)
-                                case .tracking: Text("종료")
-                                }
-                            }
+                        HStack(spacing: 6) {
+                            Image(systemName: viewStore.drawMode == .tracking ? "stop.circle.fill" : "record.circle")
+                                .font(.system(size: 14, weight: .semibold))
+                            
+                            Text(viewStore.drawMode == .tracking ? "종료" : "트래킹")
+                                .font(.system(size: 15, weight: .semibold))
+                        }
+                        .foregroundColor(viewStore.drawMode == .tracking ? .white : .green)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 50)
+                        .background(
+                            RoundedRectangle(cornerRadius: 25)
+                                .fill(viewStore.drawMode == .tracking ? Color.red : Color.white)
+                        )
+                        .shadow(color: Color.black.opacity(0.1), radius: 6, x: 0, y: 2)
                     }
-                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .disabled(viewStore.drawMode == .pin)
+                    .opacity(viewStore.drawMode == .pin ? 0.5 : 1.0)
                     
+                    Button {
+                        viewStore.send(.loadData)
+                    } label: {
+                        ZStack {
+                            Circle()
+                                .fill(Color.white)
+                                .frame(width: 50, height: 50)
+                                .shadow(color: Color.black.opacity(0.15), radius: 8, x: 0, y: 2)
+                            
+                            Image(systemName: "arrow.clockwise")
+                                .font(.system(size: 20, weight: .semibold))
+                                .foregroundColor(.blue)
+                        }
+                    }
                 }
-                .frame(height: 50)
                 .padding(.horizontal, 20)
                 .padding(.bottom, 100)
                 

@@ -138,13 +138,15 @@ struct KakaoMapView: UIViewRepresentable {
                                 
             guard let map = self.map else {return}
             
-            let layer = map.getRouteManager().getRouteLayer(layerID: Literals.routeLayer)
-            
-            layer?.clearAllRoutes()
+            let routeManager = map.getRouteManager()
+            routeManager.removeRouteLayer(layerID: Literals.routeLayer)
+//            let layer = map.getRouteManager().getRouteLayer(layerID: Literals.routeLayer)
+//            layer?.clearAllRoutes()
             
             let labelLayer = map.getLabelManager().getLabelLayer(layerID: Literals.flagLayer)
-            
             labelLayer?.clearAllItems()
+            
+            self.drawedName = []
         }
         
         func removeRoute() {
@@ -159,8 +161,9 @@ struct KakaoMapView: UIViewRepresentable {
             
             if self.nowMapVersion != self.props.mapRevision {
                 self.nowMapVersion = self.props.mapRevision
-                
+//                
                 self.clear()
+                self.createRouteLayer()
             }
             
             self.updateCurrentPositionPoi()
@@ -174,7 +177,9 @@ struct KakaoMapView: UIViewRepresentable {
             switch self.props.drawMode {
             case .none:
                 if let newRoute = self.newRoute {
-                    let route = Route(name: randomString(length: 10),
+                    let name = randomString(length: 10)
+                    print("name \(name)")
+                    let route = Route(name: name,
                                       geometry: newRoute.geometry)
                     
 //                    self.local.append(route)
@@ -265,7 +270,7 @@ struct KakaoMapView: UIViewRepresentable {
             
             self.createLabelLayer()
             self.createCurrentPoi()
-            self.createRouteLayer()
+//            self.createRouteLayer()
         }
         
         //addView 실패 이벤트 delegate. 실패에 대한 오류 처리를 진행한다.

@@ -10,7 +10,6 @@ import CoreLocation
 import ComposableArchitecture
 
 // MARK: - CLLocationManager Wrapper (Data Layer 구현)
-
 final class CLLocationManagerWrapper: NSObject, CLLocationManagerDelegate {
     private let manager = CLLocationManager()
     private var continuation: AsyncStream<CLLocationCoordinate2D>.Continuation?
