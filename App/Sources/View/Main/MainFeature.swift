@@ -28,8 +28,11 @@ struct MainFeature {
         
         var moveMode: KakaoMapTrackingMode = .moveCurrent
         var drawMode: KakaoMapDrawMode = .none
+        
+        var add: AddFeature.State?
+        
     }
-
+    
     enum Action {
         case onAppear
         case loadData
@@ -41,11 +44,16 @@ struct MainFeature {
         case setDrawMode(KakaoMapDrawMode)
         case handleError(CourseError)
         case clearError
+        
+        
+        case addButtonTapped(Route)
+        case add(AddFeature.Action)
+        case addDismissed
     }
     
     @Dependency(\.courseUseCase) var courseUseCase
     @Dependency(\.locationClient) var locationClient
-
+    
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
@@ -81,19 +89,21 @@ struct MainFeature {
                 state.totalCount = result.totalCount
                 return .none
             case .updateData(let data):
-                state.isLoading = true
+//                state.isLoading = true
                 state.errorMessage = nil
                 state.courseError = nil
-                return .run { send in
-                    do {
-                        _ = try await courseUseCase.addRoute(data)
-                        await send(.loadData)
-                    } catch let error as CourseError {
-                        await send(.handleError(error))
-                    } catch {
-                        await send(.handleError(.unknown(error.localizedDescription)))
-                    }
-                }
+                
+                return .send(.addButtonTapped(data))
+//                return .run { send in
+//                    do {
+//                        _ = try await courseUseCase.addRoute(data)
+//                        await send(.loadData)
+//                    } catch let error as CourseError {
+//                        await send(.handleError(error))
+//                    } catch {
+//                        await send(.handleError(.unknown(error.localizedDescription)))
+//                    }
+//                }
             case let .handleError(error):
                 state.isLoading = false
                 state.courseError = error
@@ -127,8 +137,38 @@ struct MainFeature {
                 state.drawMode = mode
                 print("setDrawMode", state.moveMode)
                 return .none
-            default: return .none
+                //            default: return .none
+                
+            case let .addButtonTapped(data):
+                state.add = AddFeature.State(
+                    data: data
+                )
+                return .none
+            case .add(.delegate(.didSave)):
+                // 부모 상태 업데이트
+                print("저장됨!")
+                
+                state.add = nil
+//                return .none
+                return .send(.loadData)
+            case .add(.delegate(.didCancel)):
+                state.add = nil
+                return .none
+            case .addDismissed:
+                state.add = nil
+                return .none
+            case .add:
+                return .none
+//            case .add(.saveTapped):
+//                print("메인 저장")
+//                return .none
+//            case .add(.handleError(_)):
+//                <#code#>
             }
+        }
+        .ifLet(\.add, action: \.add) {
+            AddFeature()
+                .dependency(\.courseUseCase, .liveValue)
         }
     }
 }

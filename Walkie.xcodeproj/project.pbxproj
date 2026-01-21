@@ -11,6 +11,7 @@
 		01A458696F9FD561FADD79CE /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEAA38B539CCD0370DB980 /* SplashView.swift */; };
 		142F66310583CF937DB04942 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125FAAE56DF0D80D0AD42285 /* CustomTabView.swift */; };
 		18A6475F299887DFAF97D15F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB6B9AD085FC559510CBE50 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		195ECB102F20B62D00ED16BA /* PolylineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195ECB0F2F20B62D00ED16BA /* PolylineView.swift */; };
 		21D5E75E6C287AC7C14D8CFB /* KakaoMapProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0A8FD872AB018E961C941D /* KakaoMapProps.swift */; };
 		21DFAD6E2C3067A4F28B8FBC /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D2CF972EB34CAD2008BA29CE /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24A23BA2182C8D83AE80383A /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F763A242D2925C83260DF313 /* MoyaLoggingPlugin.swift */; };
@@ -26,7 +27,7 @@
 		567B6A9BFC42B7A3D4194D98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C4AA30CBA94A7DD2CF9D051 /* Assets.xcassets */; };
 		583F20EEE25E8D5659C6C881 /* swift-sharing_Sharing.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 174B37AA0088443956E8A4A2 /* swift-sharing_Sharing.bundle */; };
 		58A75B63D590BCD369221F07 /* CustomTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5597A6E96CC47FCF6BD326 /* CustomTabItem.swift */; };
-		5AA3C729C219B9DB2EA7D41D /* DefaultLocationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CFB8EC7A27ADE566A54828 /* DefaultLocationClient.swift */; };
+		644C2EEE11384B33F7C65D7A /* AddFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042ED430B338DAF81E6A0C34 /* AddFeature.swift */; };
 		67F8B4F08062683F29782399 /* SplashInitRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF1E24829B60180A6000F3 /* SplashInitRes.swift */; };
 		6AA4BBFD18A58C3F3514C11B /* CourseRecomRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4596BC7D9A08C2090DF281 /* CourseRecomRes.swift */; };
 		78AD7AF17412303ECD780926 /* CourseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37B712525CA245BA83EF26B /* CourseAPI.swift */; };
@@ -55,7 +56,9 @@
 		BDAAB67ACBD7079242408AEC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9A835FFE209A983860FD36 /* NetworkManager.swift */; };
 		C263C769AFDF946C5F274697 /* KakaoMapsSDK-SPM_KakaoMapsSDK_SPM.bundle in Dependencies */ = {isa = PBXBuildFile; fileRef = 0231909945B3CCDA22F33CB9 /* KakaoMapsSDK-SPM_KakaoMapsSDK_SPM.bundle */; };
 		C29C57133C8FA13CBFD3F437 /* KakaoMapsSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1380808ECCA7E9E083EFA838 /* KakaoMapsSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CAB6E1258A4272A69AFDF807 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3E528FD25F3FF2E93D0786 /* AddView.swift */; };
 		D2699841700F7F9A3010E834 /* CombineMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA11632CE966F8007F60469C /* CombineMoya.framework */; };
+		D4C103F8D589C21E03C1AE8C /* DefaultLocationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD8702FA21D1F978507A61 /* DefaultLocationClient.swift */; };
 		D662907D0DCB0EA4AF900D34 /* CourseRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8114FF35AE225E0C4533446F /* CourseRepositoryProtocol.swift */; };
 		D73B16FB09944EFEFC947899 /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA61294F9F33D58F00147E1A /* ComposableArchitecture.framework */; };
 		D7A37DBEFF08F3767D84BDEF /* MainFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A0877FD2E1321D7C3989DF /* MainFeature.swift */; };
@@ -108,18 +111,21 @@
 
 /* Begin PBXFileReference section */
 		0231909945B3CCDA22F33CB9 /* KakaoMapsSDK-SPM_KakaoMapsSDK_SPM.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KakaoMapsSDK-SPM_KakaoMapsSDK_SPM.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		042ED430B338DAF81E6A0C34 /* AddFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeature.swift; sourceTree = "<group>"; };
 		0647813280E174B3769B444C /* TWError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWError.swift; sourceTree = "<group>"; };
 		1076CCEEF78C7175F967EB3A /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		125FAAE56DF0D80D0AD42285 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 		1380808ECCA7E9E083EFA838 /* KakaoMapsSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = KakaoMapsSDK.xcframework; sourceTree = "<group>"; };
 		174B37AA0088443956E8A4A2 /* swift-sharing_Sharing.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-sharing_Sharing.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E4304ED24E08C0AF0B0E75 /* SplashRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRepository.swift; sourceTree = "<group>"; };
+		195ECB0F2F20B62D00ED16BA /* PolylineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolylineView.swift; sourceTree = "<group>"; };
 		19FCDEDD420EA6DDA2985C19 /* TabInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabInfo.swift; sourceTree = "<group>"; };
 		1AA02F4788E26B1D1E502C20 /* CustomPoiType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPoiType.swift; sourceTree = "<group>"; };
 		2A0A8FD872AB018E961C941D /* KakaoMapProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapProps.swift; sourceTree = "<group>"; };
 		2C4AA30CBA94A7DD2CF9D051 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		366654FD99471B5E88596A2D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		39F318723FE4C549A329745D /* WalkieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkieApp.swift; sourceTree = "<group>"; };
+		3A3E528FD25F3FF2E93D0786 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		4121F796E354D6430B6C5347 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		456FB0258E7C3BFCEDDDFDBC /* Walkie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Walkie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47FC36E4D0C4F40E4BBC1EF6 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
@@ -129,6 +135,7 @@
 		5DFF1E24829B60180A6000F3 /* SplashInitRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInitRes.swift; sourceTree = "<group>"; };
 		5DFF4EF3BD11EFD06323326A /* SplashFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashFeature.swift; sourceTree = "<group>"; };
 		69C21B8BCC6EC4EFEC1508D1 /* RootFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootFeature.swift; sourceTree = "<group>"; };
+		6BBD8702FA21D1F978507A61 /* DefaultLocationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLocationClient.swift; sourceTree = "<group>"; };
 		6C0FC0ED0C9826F412301827 /* KakaoMapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapManager.swift; sourceTree = "<group>"; };
 		7144F4F10FA4685135B12838 /* CourseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseError.swift; sourceTree = "<group>"; };
 		76A2CB1DE53C9948B68E85AC /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,7 +167,6 @@
 		E4E63ADDA464C13A2A9A69CD /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		EA8D79D47705ECBD673CCE35 /* Moya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F691EEE4488504E5633FE04D /* TuistAssets+Walkie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+Walkie.swift"; sourceTree = "<group>"; };
-		F6CFB8EC7A27ADE566A54828 /* DefaultLocationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLocationClient.swift; sourceTree = "<group>"; };
 		F763A242D2925C83260DF313 /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,7 +194,7 @@
 		1027A5BEEDC7EB468F51D92E /* Location */ = {
 			isa = PBXGroup;
 			children = (
-				F6CFB8EC7A27ADE566A54828 /* DefaultLocationClient.swift */,
+				6BBD8702FA21D1F978507A61 /* DefaultLocationClient.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -420,6 +426,7 @@
 		C81F316961761336FFFEFB6B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CD560AC53920FF870AC20E41 /* Add */,
 				493B036DF3D9AF59FA224F95 /* CustomTabbar */,
 				E08DAAB57E7641E04E6837D3 /* Main */,
 				C6A857E870BE536B5F18DB46 /* Map */,
@@ -435,6 +442,16 @@
 				58F1009DF31F1C6811208491 /* LocationClient.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		CD560AC53920FF870AC20E41 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				195ECB0F2F20B62D00ED16BA /* PolylineView.swift */,
+				042ED430B338DAF81E6A0C34 /* AddFeature.swift */,
+				3A3E528FD25F3FF2E93D0786 /* AddView.swift */,
+			);
+			path = Add;
 			sourceTree = "<group>";
 		};
 		D4E073D040DFF5230EBF271F /* Derived */ = {
@@ -572,7 +589,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33682141908DE5CA479FA9CD /* AppDelegate.swift in Sources */,
-				5AA3C729C219B9DB2EA7D41D /* DefaultLocationClient.swift in Sources */,
+				D4C103F8D589C21E03C1AE8C /* DefaultLocationClient.swift in Sources */,
 				9AA2CF0DE4D8BEE940842C54 /* CourseMapper.swift in Sources */,
 				82FD54263C23FBB6A5853CD9 /* BaseProvider.swift in Sources */,
 				24A23BA2182C8D83AE80383A /* MoyaLoggingPlugin.swift in Sources */,
@@ -593,6 +610,8 @@
 				2837B051C642A6D02A991EFB /* CourseUseCase.swift in Sources */,
 				E7834DD22C5779E6575650DE /* Route.swift in Sources */,
 				91462CFE3154C8219A1261A2 /* SceneDelegate.swift in Sources */,
+				644C2EEE11384B33F7C65D7A /* AddFeature.swift in Sources */,
+				CAB6E1258A4272A69AFDF807 /* AddView.swift in Sources */,
 				58A75B63D590BCD369221F07 /* CustomTabItem.swift in Sources */,
 				142F66310583CF937DB04942 /* CustomTabView.swift in Sources */,
 				7FDE43415A9A04568A06DA8F /* CustomTabbar.swift in Sources */,
@@ -608,6 +627,7 @@
 				8B938CEAA9F49C22CA3E5744 /* RootView.swift in Sources */,
 				7EFB37B55E139CB0136646CC /* SplashFeature.swift in Sources */,
 				01A458696F9FD561FADD79CE /* SplashView.swift in Sources */,
+				195ECB102F20B62D00ED16BA /* PolylineView.swift in Sources */,
 				FFFD7A0F2992C5B97158984A /* WalkieApp.swift in Sources */,
 				ECE33CB95DC6681EC35EC51B /* TuistAssets+Walkie.swift in Sources */,
 				8B2BDACBEA11B838E9936A4B /* TuistBundle+Walkie.swift in Sources */,
@@ -622,6 +642,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6P4X6KH3P8;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -662,6 +683,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6P4X6KH3P8;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

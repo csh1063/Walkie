@@ -25,7 +25,8 @@ struct Server {
 //        case .dev:
 //        case .prod:
 //        case .stage:
-        default: return "http://127.0.0.1:3000"
+//        default: return "http://127.0.0.1:3000"
+        default: return "http://169.254.118.191:3000"
         }
     }
 }

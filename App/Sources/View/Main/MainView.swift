@@ -10,7 +10,7 @@ struct MainView: View {
     
     let store: StoreOf<MainFeature>
     
-//    @State private var draw: Bool = false
+    //    @State private var draw: Bool = false
     @State private var selection: Int = 0
     @State var showLocation: Bool = false
     @State var boxOpacity: Double = 0
@@ -42,23 +42,23 @@ struct MainView: View {
                     })
                 
                 KakaoMapView(props: props)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .ignoresSafeArea(.container)
-                .onAppear(perform: {
-                    viewStore.send(.changeMapState(true))
-                }).onDisappear(perform: {
-                    viewStore.send(.changeMapState(false))
-                })
-                .onChange(of: scenePhase) { phase in    // 화면 phase
-                    switch phase {
-                    case .active:
-                        print("app active")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .ignoresSafeArea(.container)
+                    .onAppear(perform: {
                         viewStore.send(.changeMapState(true))
-                    default:
-                        print("app inactive or background")
+                    }).onDisappear(perform: {
                         viewStore.send(.changeMapState(false))
+                    })
+                    .onChange(of: scenePhase) { phase in    // 화면 phase
+                        switch phase {
+                        case .active:
+                            print("app active")
+                            viewStore.send(.changeMapState(true))
+                        default:
+                            print("app inactive or background")
+                            viewStore.send(.changeMapState(false))
+                        }
                     }
-                }
                 
                 HStack(spacing: 12) {
                     // 내 위치 버튼
@@ -164,7 +164,19 @@ struct MainView: View {
                         .frame(maxWidth: .infinity)
                         .padding(.horizontal, 20)
                         .padding(.bottom, boxBottom)
-    //                    .opacity(boxOpacity)
+                }
+                
+                
+                
+                IfLetStore(
+                    store.scope(state: \.add, action: \.add)
+                ) { addStore in
+
+                    // dim
+                    Color.black.opacity(0.4)
+                        .ignoresSafeArea()
+
+                    AddView(store: addStore)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -177,14 +189,12 @@ struct MainView: View {
     private func showBox() {
         self.showLocation = true
         withAnimation(.easeInOut(duration: 0.2)) {
-//            self.boxOpacity = 1
             self.boxBottom = 200
         }
     }
     
     private func hideBox() {
         withAnimation(.easeInOut(duration: 0.1)) {
-//            self.boxOpacity = 0
             self.boxBottom = -400
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
