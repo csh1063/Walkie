@@ -40,7 +40,13 @@ enum KakaoMapDrawMode {
 
 struct KakaoMapView: UIViewRepresentable {
     
-    var props: KakaoMapProps
+//    var props: KakaoMapProps
+    
+    var isEnable: Bool
+    var state: KakaoMapState
+    var current: KakaoMapCurrent
+    var data: KakaoMapData
+    var onEvent: (KakaoMapEvent) -> Void
     
     /// UIView를 상속한 KMViewContainer를 생성한다.
     /// 뷰 생성과 함께 KMControllerDelegate를 구현한 Coordinator를 생성하고, 엔진을 생성 및 초기화한다.
@@ -70,10 +76,14 @@ struct KakaoMapView: UIViewRepresentable {
     /// draw가 true로 설정되면 엔진을 시작하고 렌더링을 시작한다.
     /// draw가 false로 설정되면 렌더링을 멈추고 엔진을 stop한다.
     func updateUIView(_ uiView: KMViewContainer, context: Self.Context) {
-        if props.mapState {
+        if isEnable {
 //        if draw {
             context.coordinator.controller?.activateEngine()
-            context.coordinator.props = props
+//            context.coordinator.props = props
+            context.coordinator.state = state
+            context.coordinator.current = current
+            context.coordinator.data = data
+            context.coordinator.onEvent = onEvent
             context.coordinator.updatePosition()
         } else {
             context.coordinator.controller?.pauseEngine()
@@ -82,7 +92,13 @@ struct KakaoMapView: UIViewRepresentable {
     
     /// Coordinator 생성
     func makeCoordinator() -> KakaoMapCoordinator {
-        return KakaoMapCoordinator(props: self.props)
+//        return KakaoMapCoordinator(props: self.props)
+        return KakaoMapCoordinator(
+            state: state,
+            current: current,
+            data: data,
+            onEvent: onEvent
+        )
     }
     
     /// Cleans up the presented `UIView` (and coordinator) in
@@ -97,13 +113,19 @@ struct KakaoMapView: UIViewRepresentable {
         
         var controller: KMController?
         
-        var props: KakaoMapProps
+//        var props: KakaoMapProps
+        var state: KakaoMapState
+        var current: KakaoMapCurrent
+        var data: KakaoMapData
+        var onEvent: (KakaoMapEvent) -> Void
+        
         var local: [Route] = []
         
         var nowMapVersion: Int = -1
         
         var mapMode: KakaoMapTrackingMode {
-            return props.moveMode
+//            return props.moveMode
+            return state.moveMode
         }
         
         private var isModeChange: Bool = false
@@ -111,11 +133,14 @@ struct KakaoMapView: UIViewRepresentable {
         private var newRoute: Route?
         private var drawedName: [String] = []
         
+        private var startTime: TimeInterval?
+        private var endTime: TimeInterval?
+        
         var latitude: Double {
-            self.props.userLatitude
+            self.current.userLatitude
         }
         var longitude: Double {
-            self.props.userLongitude
+            self.current.userLongitude
         }
         
         var endDatas: [String: [MapPoint]] = [:]
@@ -124,10 +149,20 @@ struct KakaoMapView: UIViewRepresentable {
         private var map: KakaoMap?
         private var myPositionPoi: Poi?
         
-        init(props: KakaoMapProps) {
-            self.props = props
-        }
+//        init(props: KakaoMapProps) {
+//            self.props = props
+//        }
         
+        init(state: KakaoMapState,
+             current: KakaoMapCurrent,
+             data: KakaoMapData,
+             onEvent: @escaping (KakaoMapEvent) -> Void) {
+            self.state = state
+            self.current = current
+            self.data = data
+            self.onEvent = onEvent
+        }
+ 
         // MARK: Custom
         func updateCurrentPositionPoi() {
             myPositionPoi?.moveAt(MapPoint(longitude: self.longitude, latitude: self.latitude), duration: 300)
@@ -159,9 +194,9 @@ struct KakaoMapView: UIViewRepresentable {
         
         func updatePosition() {
             
-            if self.nowMapVersion != self.props.mapRevision {
-                self.nowMapVersion = self.props.mapRevision
-//                
+            if self.nowMapVersion != self.data.mapRevision {
+                self.nowMapVersion = self.data.mapRevision
+
                 self.clear()
                 self.createRouteLayer()
             }
@@ -174,19 +209,28 @@ struct KakaoMapView: UIViewRepresentable {
                 self.moveCurrentPosition()
             }
             
-            switch self.props.drawMode {
+            switch self.state.drawMode {
             case .none:
                 if let newRoute = self.newRoute {
                     let name = randomString(length: 10)
                     print("name \(name)")
-                    let route = Route(name: name,
+                    
+                    let route: Route
+                    
+                    if let startTime = self.startTime {
+                        let endTime = Date().timeIntervalSince1970
+                        print("endTime \(endTime)")
+                        
+                        route = Route(name: name,
+                                      geometry: newRoute.geometry,
+                                      duration: endTime - startTime)
+                    } else {
+                        route = Route(name: name,
                                       geometry: newRoute.geometry)
+                    }
                     
-//                    self.local.append(route)
+                    self.onEvent(.updateDatas(route))
                     
-                    self.props.onEvent(.updateDatas(route))
-                    
-//                    self.drawRoute(route)
                     self.newRoute = nil
                 }
                 break
@@ -285,7 +329,7 @@ struct KakaoMapView: UIViewRepresentable {
         func cameraWillMove(kakaoMap: KakaoMapsSDK.KakaoMap, by: MoveBy) {
 
             if !self.isModeChange, mapMode != .free {
-                self.props.onEvent(.moveMap(.free))
+                self.onEvent(.moveMap(.free))
             }
         }
         
@@ -299,7 +343,7 @@ struct KakaoMapView: UIViewRepresentable {
         func terrainDidTapped(kakaoMap: KakaoMapsSDK.KakaoMap, position: KakaoMapsSDK.MapPoint) {
             print("terrainDidTapped long: \(position.wgsCoord.longitude), lat: \(position.wgsCoord.latitude)")
             
-            if self.props.drawMode == .pin {
+            if self.state.drawMode == .pin {
                 
                 self.drawLine(longitude: position.wgsCoord.longitude,
                               latitude: position.wgsCoord.latitude)
@@ -309,6 +353,8 @@ struct KakaoMapView: UIViewRepresentable {
         private func drawLine(longitude: Double, latitude: Double) {
             
             if self.newRoute == nil {
+                self.startTime = Date().timeIntervalSince1970
+                print("startTime \(startTime ?? 0)")
                 self.newRoute = Route(name: "new",
                                   geometry: [Geometry(longitude: longitude,
                                                       latitude: latitude)])
@@ -418,7 +464,7 @@ struct KakaoMapView: UIViewRepresentable {
         
         private func makeRoute() -> [Route] {
             
-            var result = self.props.datas
+            var result = self.data.datas
             
             result.append(contentsOf: self.local)
             if let newRoute = self.newRoute {
@@ -456,7 +502,6 @@ struct KakaoMapView: UIViewRepresentable {
             let type = CustomPoiType.pick
             let startPoiOption = type.poiOption("\(route.name)_start")
             let endName = "\(route.name)_end"
-            let endPoiOption = type.poiOption(endName)
             
             manager.addPoiStyle(type.poiStyle)
             
@@ -471,6 +516,7 @@ struct KakaoMapView: UIViewRepresentable {
                 if let endPoi = layer?.getPoi(poiID: endName) {
                     endPoi.moveAt(endPoint, duration: 100)
                 } else {
+                    let endPoiOption = type.poiOption(endName)
                     _ = layer?.addPoi(option: endPoiOption, at: endPoint)
                 }
             }

@@ -46,5 +46,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>위치 기반 서비스를 위해 필요합니다</string>
+
+    <!-- 만약 항상 허용 쓰면 -->
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>위치 기반 서비스를 위해 필요합니다</string>
 </dict>
 </plist>

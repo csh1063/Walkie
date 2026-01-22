@@ -40,10 +40,9 @@ final class CLLocationManagerWrapper: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let coord = locations.last {
-            continuation?.yield(coord.coordinate)
-            print("didUpdateLocations longitude:", coord.coordinate.longitude, ", latitude", coord.coordinate.latitude)
-        }
+        guard let coord = locations.last else { return }
+        continuation?.yield(coord.coordinate)
+        print("didUpdateLocations longitude:", coord.coordinate.longitude, ", latitude", coord.coordinate.latitude)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -63,7 +62,6 @@ final class CLLocationManagerWrapper: NSObject, CLLocationManagerDelegate {
 }
 
 // MARK: - TCA Dependency (LocationClient 구현 바인딩)
-
 extension LocationClient: DependencyKey {
     public static let liveValue: LocationClient = {
         let manager = CLLocationManagerWrapper()
@@ -88,4 +86,3 @@ extension DependencyValues {
         set { self[LocationClient.self] = newValue }
     }
 }
-

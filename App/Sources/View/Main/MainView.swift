@@ -41,7 +41,25 @@ struct MainView: View {
                         }
                     })
                 
-                KakaoMapView(props: props)
+//                KakaoMapView(props: props)
+                KakaoMapView(
+                    isEnable: viewStore.mapState,
+                    state: KakaoMapState(moveMode: viewStore.moveMode,
+                                         drawMode: viewStore.drawMode),
+                    current: KakaoMapCurrent(userLatitude: viewStore.userLatitude,
+                                             userLongitude: viewStore.userLongitude),
+                    data: KakaoMapData(mapRevision: viewStore.mapRevision,
+                                       datas: viewStore.datas),
+                    onEvent: { event in
+                        DispatchQueue.main.async {
+                            switch event {
+                            case .updateDatas(let data):
+                                viewStore.send(.updateData(data))
+                            case .moveMap(let mode):
+                                viewStore.send(.setMoveMode(mode))
+                            }
+                        }
+                    })
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .ignoresSafeArea(.container)
                     .onAppear(perform: {

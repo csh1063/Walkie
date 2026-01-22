@@ -26,15 +26,15 @@ struct Route: Equatable {
         self.name = name
         self.geometry = geometry
         self.weight = weight
-
+//        self.duration = duration
+        
         if let distance {
-            self.duration = duration
             self.distance = distance
         } else {
             let distance = Self.totalDistance(from: geometry)
             self.distance = distance
-            self.duration = Self.walkingTime(distanceMeters: self.distance)
         }
+        self.duration = duration == 0 ? Self.walkingTime(distanceMeters: self.distance):duration
     }
     
     /// Geometry 배열로부터 전체 거리를 계산
@@ -60,7 +60,8 @@ struct Route: Equatable {
     
     private static func walkingTime(distanceMeters: Double, speedKmh: Double = 4.5) -> Double {
         let speedMps = speedKmh * 1000 / 3600
-        return distanceMeters / speedMps / 60 // 분 단위
+//        return distanceMeters / speedMps / 60 // 분 단위
+        return distanceMeters / speedMps // 초 단위
     }
 }
 

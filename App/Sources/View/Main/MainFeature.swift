@@ -58,11 +58,13 @@ struct MainFeature {
         Reduce { state, action in
             switch action {
             case .onAppear:
+                print("onAppear")
                 return .merge(
                     .send(.loadData),
                     .run { send in
+                        print("requestAuthorization")
                         await locationClient.requestAuthorization()
-                        
+
                         for await coord in locationClient.startUpdating() {
                             await send(.updateLocation(coord.latitude, coord.longitude))
                         }

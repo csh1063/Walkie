@@ -34,6 +34,7 @@ struct AddView: View {
                     HStack {
                         Text("거리")
                             .font(.subheadline)
+                        Spacer()
                         Text(formatDistance(viewStore.data.distance))
                             .foregroundColor(.gray)
                     }
@@ -41,7 +42,8 @@ struct AddView: View {
                     HStack {
                         Text("시간")
                             .font(.subheadline)
-                        Text(String(format: "%.1f 분", viewStore.data.duration))
+                        Spacer()
+                        Text(formatDuration(viewStore.data.duration))
                             .foregroundColor(.gray)
                     }
 
@@ -108,5 +110,36 @@ struct AddView: View {
             let m = (meters * 10).rounded() / 10
             return "\(String(format: "%.1f", m)) m"
         }
+    }
+    
+    func formatDuration(_ sec: Double) -> String {
+        var h: Int, m: Int, s: Int = 0
+        s = Int(sec) % 60
+        m = Int(sec / 60) % 60
+        h = Int(sec / 60 / 60)
+        
+        var components: [String] = []
+
+        // 시 출력
+        if h > 0 {
+            components.append("\(h)시간")
+        }
+
+        // 분 출력
+        if m > 0 || h > 0 { // 시가 있으면 0분도 출력
+            let minStr = h > 0 ? String(format: "%02d분", m) : "\(m)분"
+            components.append(minStr)
+        }
+
+        // 초 출력
+        let secStr: String
+        if h > 0 || m > 0 {
+            secStr = String(format: "%02d초", s)
+        } else {
+            secStr = "\(s)초"
+        }
+        components.append(secStr)
+
+        return components.joined(separator: " ")
     }
 }

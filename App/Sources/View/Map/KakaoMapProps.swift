@@ -22,6 +22,21 @@ struct KakaoMapProps {
     var onEvent: (KakaoMapEvent) -> Void
 }
 
+struct KakaoMapState {
+    var moveMode: KakaoMapTrackingMode
+    var drawMode: KakaoMapDrawMode
+}
+
+struct KakaoMapCurrent {
+    var userLatitude: Double
+    var userLongitude: Double
+}
+
+struct KakaoMapData {
+    var mapRevision: Int
+    var datas: [Route]
+}
+
 enum KakaoMapEvent: Equatable {
     case updateDatas(Route)
     case moveMap(KakaoMapTrackingMode)
