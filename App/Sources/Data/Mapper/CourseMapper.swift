@@ -20,9 +20,12 @@ extension CourseRecomRes {
 extension RouteRes {
     func toDomain() -> Route {
         Route(
+            id: id,
             name: name,
             geometry: geometry.toDomain(),
-            distance: distance
+            distance: distance,
+            lineColor: lineColor,
+            created: created
         )
     }
 }

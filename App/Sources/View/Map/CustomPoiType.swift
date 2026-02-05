@@ -63,11 +63,11 @@ enum CustomPoiType: CaseIterable {
         )
     }
     
-    func poiOption(_ name: String) -> PoiOptions {
+    func poiOption(_ name: String, id: Int) -> PoiOptions {
 
         let poiOption = PoiOptions(
             styleID: self.styleID,
-            poiID: name)
+            poiID: "\(name)_\(id)")
         poiOption.rank = 0
         poiOption.clickable = false
         

@@ -27,8 +27,8 @@ struct Server {
 //        case .stage:
 //        default: return "http://127.0.0.1:3000"
 //        default: return "http://169.254.118.191:3000" //집
-        default: return "http://169.254.114.7:3000" // 폰
-            
+//        default: return "http://169.254.195.232:3000/api" // 폰
+        default: return "https://mock-serverless.vercel.app/api" // 폰
         }
     }
 }

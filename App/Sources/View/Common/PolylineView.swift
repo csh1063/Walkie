@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PolylineView: View {
     let coordinates: [Geometry]
+    let lineColor: String
 
     var body: some View {
         GeometryReader { geo in
@@ -18,7 +19,6 @@ struct PolylineView: View {
             )
             
             Path { path in
-//                let points = points.map ({ CGPoint(x: $0.longitude, y: $0.latitude) })
                 guard let first = points.first else { return }
                 path.move(to: first)
                 for point in points.dropFirst() {
@@ -26,14 +26,13 @@ struct PolylineView: View {
                 }
             }
             .stroke(
-                .blue,
+                RouteColor.type(lineColor).color,
                 style: StrokeStyle(
                     lineWidth: 3,
                     lineCap: .round,
                     lineJoin: .round
                 )
             )
-//            .stroke(.blue, lineWidth: 3)
         }
     }
     

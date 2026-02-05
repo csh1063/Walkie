@@ -12,6 +12,7 @@ struct CourseAddParam {
     let name: String
     let geometry: [[Double]]
     let distance: Double
+    let lineColor: String
 }
 
 /// 코스 데이터 소스 추상화 (Domain 레이어)

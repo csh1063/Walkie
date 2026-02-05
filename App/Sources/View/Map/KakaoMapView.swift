@@ -149,6 +149,25 @@ struct KakaoMapView: UIViewRepresentable {
         private var map: KakaoMap?
         private var myPositionPoi: Poi?
         
+        private var routeStyles: [RouteStyle] = {
+            
+            var styles = [RouteStyle]()
+            for routeColor in RouteColor.allCases {
+                
+                styles.append(
+                    RouteStyle(
+                        styles: [
+                            PerLevelRouteStyle(
+                                width: 2,
+                                color: routeColor.uiColor,
+                                strokeWidth: 2,
+                                strokeColor: routeColor.uiColor,
+                                level: 5)]))
+            }
+            return styles
+        }()
+        
+        
 //        init(props: KakaoMapProps) {
 //            self.props = props
 //        }
@@ -221,11 +240,13 @@ struct KakaoMapView: UIViewRepresentable {
                         let endTime = Date().timeIntervalSince1970
                         print("endTime \(endTime)")
                         
-                        route = Route(name: name,
+                        route = Route(id: -1,
+                                      name: name,
                                       geometry: newRoute.geometry,
                                       duration: endTime - startTime)
                     } else {
-                        route = Route(name: name,
+                        route = Route(id: -1,
+                                      name: name,
                                       geometry: newRoute.geometry)
                     }
                     
@@ -355,9 +376,10 @@ struct KakaoMapView: UIViewRepresentable {
             if self.newRoute == nil {
                 self.startTime = Date().timeIntervalSince1970
                 print("startTime \(startTime ?? 0)")
-                self.newRoute = Route(name: "new",
-                                  geometry: [Geometry(longitude: longitude,
-                                                      latitude: latitude)])
+                self.newRoute = Route(id: -1,
+                                      name: "new",
+                                      geometry: [Geometry(longitude: longitude,
+                                                          latitude: latitude)])
             } else {
                 self.newRoute?.geometry.append(Geometry(longitude: longitude,
                                                         latitude: latitude))
@@ -395,6 +417,16 @@ struct KakaoMapView: UIViewRepresentable {
             let _ = manager.addLabelLayer(option: pickLayerOption)
         }
         
+//        private func regRouteColorSet() {
+//            
+//            guard let map = self.map else {
+//                return
+//            }
+//            
+//            let manager = map.getRouteManager()
+//            
+//        }
+        
         private func createRouteLayer() {
             guard let map = self.map else {
                 return
@@ -403,20 +435,9 @@ struct KakaoMapView: UIViewRepresentable {
             let manager = map.getRouteManager()
             let _ = manager.addRouteLayer(layerID: Literals.routeLayer, zOrder: 4000)
             
-            let styleSet = RouteStyleSet(styleID: "route", styles: [])
-//            styleSet.addPattern(RoutePattern(pattern: UIImage(systemName: "1.circle.fill")!, distance: 2, symbol: nil, pinStart: true, pinEnd: true))
-            
-            let routeStyle = RouteStyle(styles: [PerLevelRouteStyle(width: 2, color: UIColor.systemMint, strokeWidth: 2, strokeColor: UIColor.blue, level: 5, patternIndex: 1)])
-            
-            styleSet.addStyle(routeStyle)
-            
-            let routeStyle2 = RouteStyle(styles: [PerLevelRouteStyle(width: 2, color: UIColor.systemOrange, strokeWidth: 2, strokeColor: UIColor.red, level: 7, patternIndex: 2)])
-            
-            styleSet.addStyle(routeStyle2)
-            
-            manager.addRouteStyleSet(styleSet)
-            
-//            self.drawRoute()
+            manager.addRouteStyleSet(
+                RouteStyleSet(styleID: "route", styles: routeStyles)
+            )
         }
         
         private func drawRoute() {
@@ -436,11 +457,12 @@ struct KakaoMapView: UIViewRepresentable {
             let manager = map.getRouteManager()
             let layer = manager.getRouteLayer(layerID:  Literals.routeLayer)
             
-            let routeID = route.name
+            let routeID = "\(route.name)\(route.id == -1 ? "":"_\(route.id)")"
             let value = route.toMapPoints()
             
             if value.count > 1 {
-                let seg = RouteSegment(points: value, styleIndex: 0)
+                
+                let seg = RouteSegment(points: value, styleIndex: RouteColor.type(route.lineColor).rawValue)
                 
                 print("drawRoute key", routeID)
                 if let route = layer?.getRoute(routeID: routeID) {
@@ -489,7 +511,7 @@ struct KakaoMapView: UIViewRepresentable {
             )
             
             let layer = manager.getLabelLayer(layerID: Literals.currentLayer)
-            myPositionPoi = layer?.addPoi(option: type.poiOption("current"), at: myPosition)
+            myPositionPoi = layer?.addPoi(option: type.poiOption("current", id: 0), at: myPosition)
             myPositionPoi?.show()
         }
         
@@ -500,7 +522,7 @@ struct KakaoMapView: UIViewRepresentable {
             }
             
             let type = CustomPoiType.pick
-            let startPoiOption = type.poiOption("\(route.name)_start")
+            let startPoiOption = type.poiOption("\(route.name)_start", id: route.id)
             let endName = "\(route.name)_end"
             
             manager.addPoiStyle(type.poiStyle)
@@ -516,7 +538,7 @@ struct KakaoMapView: UIViewRepresentable {
                 if let endPoi = layer?.getPoi(poiID: endName) {
                     endPoi.moveAt(endPoint, duration: 100)
                 } else {
-                    let endPoiOption = type.poiOption(endName)
+                    let endPoiOption = type.poiOption(endName, id: route.id)
                     _ = layer?.addPoi(option: endPoiOption, at: endPoint)
                 }
             }

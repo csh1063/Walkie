@@ -98,7 +98,8 @@ extension Route {
         return CourseAddParam(
             name: self.name,
             geometry: geometry,
-            distance: self.distance
+            distance: self.distance,
+            lineColor: self.lineColor
         )
     }
 }

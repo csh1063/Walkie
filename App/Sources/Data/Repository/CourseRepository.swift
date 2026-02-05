@@ -34,7 +34,8 @@ final class LiveCourseRepository: CourseRepositoryProtocol {
             let routeAddParam = RouteAddParam(
                 name: param.name,
                 geometry: param.geometry,
-                distance: param.distance
+                distance: param.distance,
+                lineColor: param.lineColor
             )
             let _: BaseSuccess = try await client.request(.add(routeAddParam))
             return true

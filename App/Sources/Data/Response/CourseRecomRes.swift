@@ -13,11 +13,19 @@ struct CourseRecomRes: Decodable {
 }
 
 struct RouteRes: Decodable {
+    let id: Int
     let name: String
     let geometry: GeometryRes
-    let weight: Double
     let duration: Double
     let distance: Double
+    let lineColor: String
+    let created: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id, name, geometry, duration, distance
+        case lineColor = "line_color"
+        case created = "created_at"
+    }
 }
 
 struct GeometryRes: Decodable {
@@ -29,4 +37,5 @@ struct RouteAddParam: Encodable {
     let name: String
     let geometry: [[Double]]
     let distance: Double
+    let lineColor: String
 }

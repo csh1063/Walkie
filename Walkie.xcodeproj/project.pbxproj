@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,7 +11,6 @@
 		01A458696F9FD561FADD79CE /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEAA38B539CCD0370DB980 /* SplashView.swift */; };
 		142F66310583CF937DB04942 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125FAAE56DF0D80D0AD42285 /* CustomTabView.swift */; };
 		18A6475F299887DFAF97D15F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB6B9AD085FC559510CBE50 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		195ECB102F20B62D00ED16BA /* PolylineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195ECB0F2F20B62D00ED16BA /* PolylineView.swift */; };
 		21D5E75E6C287AC7C14D8CFB /* KakaoMapProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0A8FD872AB018E961C941D /* KakaoMapProps.swift */; };
 		21DFAD6E2C3067A4F28B8FBC /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D2CF972EB34CAD2008BA29CE /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24A23BA2182C8D83AE80383A /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F763A242D2925C83260DF313 /* MoyaLoggingPlugin.swift */; };
@@ -118,7 +117,6 @@
 		1380808ECCA7E9E083EFA838 /* KakaoMapsSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = KakaoMapsSDK.xcframework; sourceTree = "<group>"; };
 		174B37AA0088443956E8A4A2 /* swift-sharing_Sharing.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-sharing_Sharing.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E4304ED24E08C0AF0B0E75 /* SplashRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRepository.swift; sourceTree = "<group>"; };
-		195ECB0F2F20B62D00ED16BA /* PolylineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolylineView.swift; sourceTree = "<group>"; };
 		19FCDEDD420EA6DDA2985C19 /* TabInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabInfo.swift; sourceTree = "<group>"; };
 		1AA02F4788E26B1D1E502C20 /* CustomPoiType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPoiType.swift; sourceTree = "<group>"; };
 		2A0A8FD872AB018E961C941D /* KakaoMapProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapProps.swift; sourceTree = "<group>"; };
@@ -169,6 +167,10 @@
 		F691EEE4488504E5633FE04D /* TuistAssets+Walkie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+Walkie.swift"; sourceTree = "<group>"; };
 		F763A242D2925C83260DF313 /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		195ECB112F32180F00ED16BA /* Common */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Common; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6CCA5980873F4E452B0F8EED /* Frameworks */ = {
@@ -426,6 +428,7 @@
 		C81F316961761336FFFEFB6B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				195ECB112F32180F00ED16BA /* Common */,
 				CD560AC53920FF870AC20E41 /* Add */,
 				493B036DF3D9AF59FA224F95 /* CustomTabbar */,
 				E08DAAB57E7641E04E6837D3 /* Main */,
@@ -447,7 +450,6 @@
 		CD560AC53920FF870AC20E41 /* Add */ = {
 			isa = PBXGroup;
 			children = (
-				195ECB0F2F20B62D00ED16BA /* PolylineView.swift */,
 				042ED430B338DAF81E6A0C34 /* AddFeature.swift */,
 				3A3E528FD25F3FF2E93D0786 /* AddView.swift */,
 			);
@@ -536,6 +538,9 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				195ECB112F32180F00ED16BA /* Common */,
+			);
 			name = Walkie;
 			packageProductDependencies = (
 			);
@@ -550,6 +555,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1620;
 				ORGANIZATIONNAME = "";
 			};
 			buildConfigurationList = 4F77325DAA665CD56D75CC55 /* Build configuration list for PBXProject "Walkie" */;
@@ -627,7 +633,6 @@
 				8B938CEAA9F49C22CA3E5744 /* RootView.swift in Sources */,
 				7EFB37B55E139CB0136646CC /* SplashFeature.swift in Sources */,
 				01A458696F9FD561FADD79CE /* SplashView.swift in Sources */,
-				195ECB102F20B62D00ED16BA /* PolylineView.swift in Sources */,
 				FFFD7A0F2992C5B97158984A /* WalkieApp.swift in Sources */,
 				ECE33CB95DC6681EC35EC51B /* TuistAssets+Walkie.swift in Sources */,
 				8B2BDACBEA11B838E9936A4B /* TuistBundle+Walkie.swift in Sources */,

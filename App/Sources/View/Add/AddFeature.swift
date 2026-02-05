@@ -15,11 +15,13 @@ struct AddFeature {
     
     struct State: Equatable {
         var title: String = ""
+        var color: String = "blue"
         var data: Route
     }
 
     enum Action {
         case titleChanged(String)
+        case selectColor(String)
         case saveTapped
         case delegate(Delegate)
         case handleError(CourseError)
@@ -38,11 +40,14 @@ struct AddFeature {
             case let .titleChanged(text):
                 state.title = text
                 return .none
-
+            case let .selectColor(color):
+                state.color = color
+                return .none
             case .saveTapped:
                 print("saveTapped")
                 
                 state.data.name = state.title
+                state.data.lineColor = state.color
                 let data = state.data
                 
                 return .run { send in

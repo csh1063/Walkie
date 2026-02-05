@@ -10,22 +10,30 @@ import CoreLocation
 
 /// 도메인 레이어의 산책 코스 엔티티
 struct Route: Equatable {
+    var id: Int
     var name: String
     var geometry: [Geometry]
-    var weight: Double
+//    var weight: Double
     var duration: Double
     var distance: Double
+    var lineColor: String
+    var created: String
     
     init(
+        id: Int,
         name: String,
         geometry: [Geometry],
-        weight: Double = 0,
+//        weight: Double = 0,
         duration: Double = 0,
-        distance: Double? = nil
+        distance: Double? = nil,
+        lineColor: String = "blue",
+        created: String = ""
     ) {
+        
+        self.id = id
         self.name = name
         self.geometry = geometry
-        self.weight = weight
+//        self.weight = weight
 //        self.duration = duration
         
         if let distance {
@@ -35,6 +43,9 @@ struct Route: Equatable {
             self.distance = distance
         }
         self.duration = duration == 0 ? Self.walkingTime(distanceMeters: self.distance):duration
+        
+        self.lineColor = lineColor
+        self.created = created
     }
     
     /// Geometry 배열로부터 전체 거리를 계산

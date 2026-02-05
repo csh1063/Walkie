@@ -46,8 +46,14 @@ struct AddView: View {
                         Text(formatDuration(viewStore.data.duration))
                             .foregroundColor(.gray)
                     }
-
-                    PolylineView(coordinates: viewStore.data.geometry)
+                    
+                    ColorGridView(selectedColor: viewStore.color) { color in 
+                        viewStore.send(.selectColor(color))
+                    }
+                    .padding()
+                    
+                    PolylineView(coordinates: viewStore.data.geometry,
+                                 lineColor: viewStore.color)
                         .frame(height: 120)
                         .background(Color.gray.opacity(0.2))
                         .cornerRadius(20)
@@ -92,7 +98,7 @@ struct AddView: View {
                         }
                     }
                 }
-                .padding(.vertical, 100)
+                .padding(.vertical, 40)
                 .padding(.horizontal, 40)
                 .background(Color.white)
                 .cornerRadius(20)
