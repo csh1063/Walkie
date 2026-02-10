@@ -148,24 +148,32 @@ struct MainFeature {
                 return .none
             case .add(.delegate(.didSave)):
                 // 부모 상태 업데이트
+                state.isLoading = false
                 print("저장됨!")
                 
                 state.add = nil
 //                return .none
                 return .send(.loadData)
             case .add(.delegate(.didCancel)):
+                state.isLoading = false
                 state.add = nil
                 return .none
             case .addDismissed:
+                state.isLoading = false
                 state.add = nil
                 return .none
-            case .add:
-                return .none
-//            case .add(.saveTapped):
-//                print("메인 저장")
+//            case .add:
 //                return .none
-//            case .add(.handleError(_)):
-//                <#code#>
+            case .add(.saveTapped):
+                print("메인 저장")
+                state.isLoading = true
+                return .none
+            case .add(.handleError(_)):
+                return .none
+            case .add(.titleChanged(_)):
+                return .none
+            case .add(.selectColor(_)):
+                return .none
             }
         }
         .ifLet(\.add, action: \.add) {

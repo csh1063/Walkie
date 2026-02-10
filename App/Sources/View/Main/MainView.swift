@@ -184,6 +184,10 @@ struct MainView: View {
 
                     AddView(store: addStore)
                 }
+                
+                if viewStore.isLoading {
+                    LoadingView()
+                }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .ignoresSafeArea(.container)
